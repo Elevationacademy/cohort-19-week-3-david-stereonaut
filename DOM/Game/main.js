@@ -21,6 +21,18 @@ const moveDown = function(){
     block.style.top = `${((parseInt(block.style.top) || 0) + 15)}px` 
 }
 
+const moving = function(e){
+    if (e.keyCode == 38){
+        moveUp()
+    } else if(e.keyCode == 40){
+        moveDown()
+    } else if(e.keyCode == 39){
+        moveRight()
+    } else if(e.keyCode == 37){
+        moveLeft()
+    }
+}
+
 const header = document.createElement("h1")
 header.innerHTML = "The Best Game Ever"
 header.style.color = "#c0392b"
@@ -30,3 +42,5 @@ const subHeader = document.createElement("h2")
 subHeader.innerHTML = '"Best game I have ever played" - Bill Gates'
 subHeader.setAttribute("class", "sub-header")
 document.body.appendChild(subHeader)
+
+document.addEventListener("keydown", moving)
