@@ -6,16 +6,31 @@ const getRandomColor = function() {
     return niceColors[randomPosition];
 }
 
-
+let ourColors = [];
 const setRandomColor = function(e){
-      e.style.backgroundColor = getRandomColor();
+    e.style.backgroundColor = getRandomColor();
+    ourColors[e.id[3]] = e.style.backgroundColor
+    let count = 0
+    for (i of ourColors){
+        if (i === e.style.backgroundColor){
+            count++
+        }
+    }
+    if (count == 6){
+        let nice = document.createElement("div")
+        nice.innerHTML = "Nice Job!"
+        document.body.appendChild(nice)
+    }
 }
 
 
 for (i=0; i < 6; i++){
     const box = document.createElement("div")
-    box.setAttribute("class", "box")
+    box.setAttribute("class", `box`)
+    box.setAttribute("id", `box${i}`)
     box.setAttribute("onmouseenter", "setRandomColor(this)")
     box.style.backgroundColor = getRandomColor()
+    ourColors.push(box.style.backgroundColor)
     document.getElementById("container").appendChild(box)
 }
+console.log(ourColors)
