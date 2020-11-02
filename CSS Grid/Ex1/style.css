@@ -1,0 +1,97 @@
+body {
+    margin: 0
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 11fr 1fr;
+    grid-template-areas: 
+    "f c"
+    "f i";
+    height: 100vh;
+}
+
+#friend-container {
+    display: grid;
+    grid-area: f;
+    padding: 2%;
+    background-color: #8e44ad;
+    grid-template-rows: 1fr 2fr;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+#friend-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.friend {
+    display: grid;
+    align-items: center;
+    align-content: center;
+    background-color: #9b59b6;
+    height: fit-content;
+    padding: 1%;
+    font-weight: 400;
+}
+
+#chat {
+    background-color: #ecf0f1;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+
+.msg {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: fit-content;
+    border-radius: 3px;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+.other-msg {
+    background-color: #bdc3c7;
+    justify-self: left;
+}
+
+.own-msg {
+    background-color: #27ae60;
+    justify-self: right;
+}
+
+.msg-text {
+    text-align: left;
+    font-family: 'Itim', cursive;
+    font-size: 1.5vw;
+    margin: 0;
+}
+
+.msg-time {
+    justify-self: right;
+    align-self: end;
+    margin: 0;
+    font-family: 'Itim', cursive;
+    font-size: 1vw;
+}
+
+#type {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+    background-color: #8e44ad;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: floralwhite;
+}
+
+input {
+    font-family: 'Source Sans Pro', sans-serif;
+}

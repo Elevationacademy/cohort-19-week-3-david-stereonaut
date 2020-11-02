@@ -5,30 +5,30 @@ const block = document.getElementById("block")
 const down = document.getElementById("down")
 block.style.backgroundColor = "yellow"
 
-const moveRight = function(){
-    block.style.left = `${((parseInt(block.style.left) || 0) + 15)}px` 
+const moveRight = function () {
+    block.style.left = `${((parseInt(block.style.left) || 0) + 15)}px`
 }
 
-const moveLeft = function(){
-    block.style.left = `${((parseInt(block.style.left) || 0) - 15)}px` 
+const moveLeft = function () {
+    block.style.left = `${((parseInt(block.style.left) || 0) - 15)}px`
 }
 
-const moveUp = function(){
-    block.style.top = `${((parseInt(block.style.top) || 0) - 15)}px` 
+const moveUp = function () {
+    block.style.top = `${((parseInt(block.style.top) || 0) - 15)}px`
 }
 
-const moveDown = function(){
-    block.style.top = `${((parseInt(block.style.top) || 0) + 15)}px` 
+const moveDown = function () {
+    block.style.top = `${((parseInt(block.style.top) || 0) + 15)}px`
 }
 
-const moving = function(e){
-    if (e.keyCode == 38){
+const moving = function ({ keyCode }) {
+    if (keyCode == 38) {
         moveUp()
-    } else if(e.keyCode == 40){
+    } else if (keyCode == 40) {
         moveDown()
-    } else if(e.keyCode == 39){
+    } else if (keyCode == 39) {
         moveRight()
-    } else if(e.keyCode == 37){
+    } else if (keyCode == 37) {
         moveLeft()
     }
 }
